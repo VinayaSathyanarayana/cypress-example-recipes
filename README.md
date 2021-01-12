@@ -8,13 +8,18 @@ Recipe | Description
 --- | ---
 [Node Modules](./examples/fundamentals__node-modules) | Import your own node modules
 [Environment variables](./examples/server-communication__env-variables) | Passing environment variables to tests
+[Handling errors](./examples/fundamentals__errors) | Handling thrown errors and unhandled promise rejections
 [Dynamic tests](./examples/fundamentals__dynamic-tests) | Create tests dynamically from data
 [Fixtures](./examples/fundamentals__fixtures) | Loading single or multiple fixtures
-[Adding Custom Commands](./examples/fundamentals__add-custom-command) | Write your own custom commands with correct types
+[Adding Custom Commands](./examples/fundamentals__add-custom-command) | Write your own custom commands using JavaScript with correct types for IntelliSense to work
+[Adding Custom Commands (TS)](./examples/fundamentals__add-custom-command-ts) | Write your own custom commands using TypeScript
 [Adding Chai Assertions](./examples/extending-cypress__chai-assertions) | Add new or custom chai assertions with correct types
 [Cypress module API](./examples/fundamentals__module-api) | Run Cypress via its module API
+[Wrapping Cypress module API](./examples/fundamentals__module-api-wrap) | Writing a wrapper around "cypress run" command line parsing
 [Custom browsers](./examples/fundamentals__custom-browsers) | Control which browsers the project can use, or even add a custom browser into the list
-[use Chrome Remote Interface](./examples/fundamentals__chrome-remote-debugging) | Use Chrome debugger protocol to trigger hover state and print media style
+[Use Chrome Remote Interface](./examples/fundamentals__chrome-remote-debugging) | Use Chrome debugger protocol to trigger hover state and print media style
+[Out-of-the-box TypeScript](./examples/fundamentals__typescript) | Write tests in TypeScript without setting up preprocessors
+[Per-test timeout](./examples/fundamentals__timeout) | Fail a test if it runs longer than the specified time limit
 
 ## Testing the DOM
 
@@ -30,6 +35,8 @@ Recipe | Description
 [Evaluate performance metrics](./examples/testing-dom__performance-metrics) | Utilize Cypress to monitor a website
 [Root style](./examples/testing-dom__root-style) | Trigger input color change that modifies CSS variable
 [Select widgets](./examples/testing-dom__select2) | Working with `<select>` elements and [Select2](https://select2.org/) widgets
+[Lit Elements](./examples/testing-dom__lit-element) | Testing Lit Elements with Shadow DOM
+[File download](./examples/testing-dom__download) | Download and validate CSV, Excel, text, Zip, and image files
 
 ## Logging in recipes
 
@@ -74,6 +81,8 @@ Recipe | Description
 [Browser notifications](./examples/blogs__notification) | How to test application that uses [`Notification`](https://developer.mozilla.org/en-US/docs/Web/API/notification)
 [Testing iframes](./examples/blogs__iframes) | Accessing elements in 3rd party iframe, spy and stub network calls from iframe
 [Class decorators](./examples/blogs__class-decorator) | Using JavaScript class decorator to expose objects created by the application so they are reachable from tests
+[Form Submit](./examples/blogs__form-submit) | Removing flake from the test where a page is reloaded after form submission
+[Using Day.js instead of Moment.js](./examples/blogs__dayjs) | Using [day.js](https://day.js.org/) library instead of the deprecated `Cypress.moment`
 
 ## Stubbing and spying
 
@@ -81,8 +90,10 @@ Recipe | Description
 --- | ---
 [Stubbing Functions](./examples/stubbing-spying__functions) | Use `cy.spy()` and `cy.stub()` to test function calls
 [Stubbing `window.fetch`](./examples/stubbing-spying__window-fetch) | Work around the `window.fetch` limitation
+[Stubbing using `cy.intercept`](./examples/stubbing-spying__intercept) | Control network using `cy.intercept` API
 [Stubbing `window.open` and `console.log`](./examples/stubbing-spying__window) | Use `cy.stub()` and `cy.spy()` to test application behavior
-[Stubbing Google Analytics](./examples/stubbing-spying__google-analytics) | Use `cy.stub()` to test Google Analytics calls
+[Stubbing `window.print`](./examples/stubbing-spying__window-print) | Use `cy.stub()` to test `window.print` call made from the application
+[Stubbing Google Analytics](./examples/stubbing-spying__google-analytics) | Use `cy.stub()` or `cy.intercept()` to test Google Analytics calls
 [Spying and stubbing methods on `console` object](./examples/stubbing-spying__console) | Use `cy.spy()` and `cy.stub()` on `console.log`
 [Stub resource loading](./examples/stubbing__resources) | Use `MutationObserver` to stub resource loading like `img` tags
 [Stub `navigator.cookieEnabled` property](./examples/stubbing-spying__navigator) | Use `cy.stub()` to mock the `navigator.cookieEnabled` property
@@ -105,6 +116,8 @@ Recipe | Description
 [XHR assertions](./examples/server-communication__xhr-assertions) | Spy and assert on application's network calls
 [Visiting 2nd domain](./examples/server-communication__visit-2nd-domain) | Visiting two different domains from two different tests
 [Stream test results](./examples/server-communication__stream-tests) | Streams each test result from the browser to the plugins to an external process via IPC
+[Offline](./examples/server-communication__offline) | Test web application when the network is offline
+[Server timing](./examples/server-communication__server-timing) | Report server timing results from Cypress test
 
 ## Other Cypress Recipes
 
@@ -179,6 +192,8 @@ npm run cypress:run -- --browser chrome
 npm run cypress:run -- --record
 ```
 
+You can find the recording at the Cypress Dashboard linked below
+
 [![Cypress Dashboard][dashboard badge]][dashboard url]
 
 ## Development
@@ -187,5 +202,5 @@ See [Development.md](Development.md)
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
-[dashboard badge]: https://img.shields.io/badge/cypress-dashboard-brightgreen.svg
+[dashboard badge]: https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/6p53jw/master&style=flat&logo=cypress
 [dashboard url]: https://dashboard.cypress.io/projects/6p53jw/runs

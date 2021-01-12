@@ -1,6 +1,9 @@
 {
-  "fixturesFolder": false,
   "supportFile": false,
   "pluginsFile": false,
-  "defaultCommandTimeout": 1000
+  "defaultCommandTimeout": 3000,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  }
 }
